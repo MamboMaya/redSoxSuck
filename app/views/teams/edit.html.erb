@@ -2,4 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to "Deleeeeete", teams_path %>
+<%= link_to "Deleeeeete", team_path(@team),
+   method: :delete,
+   data: {confirm: "Are you sure?"} %>

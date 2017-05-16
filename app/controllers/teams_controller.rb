@@ -16,7 +16,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @createteam = Team.(team_params)
+    @createteam = Team.create(team_params)
 
     if @createteam.save
       redirect_to teams_path, notice: "nooiiiiice"
@@ -36,12 +36,12 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-    @team = Team.destroy
+    @team = Team.find(params[:id])
 
-    if @team.destroy
-      redirect_to teams_path, "notice: GONE!"
+    if @team.delete
+      redirect_to teams_path, notice: "GONE!"
     else
-      redirect_to edit_team_path, "notice: try again senor"
+      redirect_to edit_team_path, notice: "try again senor"
     end
   end
 
