@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  # get 'players/index'
+  #
+  # get 'players/show'
+  #
+  # get 'players/edit'
+  #
+  # get 'players/new'
+
+  # get 'cities/index'
+  #
+  # get 'cities/show'
+  #
+  # get 'cities/edit'
+  #
+  # get 'cities/new'
+
   # get 'teams', to: 'teams#index', as: 'teams'
   #
   # get 'teams/:id', to: 'teams#show', as: 'team'
@@ -13,6 +29,12 @@ Rails.application.routes.draw do
 
   resources :teams
 
-  root 'teams#index'
+  resources :cities
+
+  resources :players
+
+  root 'cities#index'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
