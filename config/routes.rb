@@ -27,11 +27,16 @@ Rails.application.routes.draw do
   #
   # patch 'teams/:id', to: 'teams#update'
 
-  resources :teams
-
-  resources :cities
 
   resources :players
+  resources :teams do
+    resources :players
+  end
+
+  resources :cities do
+    resources :teams
+    resources :players
+  end
 
   root 'cities#index'
 

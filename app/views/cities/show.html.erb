@@ -1,2 +1,22 @@
-<h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
+<h1><%= @city.name %></h1>
+
+
+
+<h3>Baseball Teams</h3>
+
+<ul>
+  <% @baseball_teams.each do |baseball| %>
+    <li><%= baseball.name %> </li>
+  <% end %>
+</ul>
+
+
+<h3>Football Teams</h3>
+
+<ul>
+  <% @football_teams.each do |football| %>
+    <li><%= football.name %> </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create a Team in #{@city.name}", new_city_team_path(@city.id) %>

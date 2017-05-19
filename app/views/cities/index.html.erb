@@ -1,2 +1,15 @@
-<h1>Cities#index</h1>
-<p>Find me in app/views/cities/index.html.erb</p>
+<h1>Sportsball Cities</h1>
+
+
+<h3>List of Cities</h3>
+<ul>
+  <% @cities.each do |city| %>
+    <li><%= link_to city.name, city_path(city.id) %></li>
+
+  <% end %>
+
+</ul>
+
+<br>
+<br>
+<%= link_to "Create a new City", new_city_path %>
