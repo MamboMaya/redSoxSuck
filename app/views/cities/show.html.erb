@@ -6,7 +6,7 @@
 
 <ul>
   <% @baseball_teams.each do |baseball| %>
-    <li><%= baseball.name %> </li>
+    <li><%= link_to baseball.name, team_path(baseball.id) %> </li>
   <% end %>
 </ul>
 
@@ -15,7 +15,7 @@
 
 <ul>
   <% @football_teams.each do |football| %>
-    <li><%= football.name %> </li>
+    <li><%= link_to football.name, team_path(football.id) %> </li>
   <% end %>
 </ul>
 
